@@ -1,0 +1,125 @@
+[
+  {
+    "type": "package",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "package_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "package",
+          "named": true
+        },
+        {
+          "type": "repository",
+          "named": true
+        },
+        {
+          "type": "slot",
+          "named": true
+        },
+        {
+          "type": "version",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "repository",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "slot",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "use_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "use_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "cmp",
+          "named": true
+        },
+        {
+          "type": "package_identifier",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "unset",
+          "named": true
+        },
+        {
+          "type": "wildcard",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "version",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "cmp",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "set",
+    "named": true
+  },
+  {
+    "type": "unset",
+    "named": true
+  },
+  {
+    "type": "wildcard",
+    "named": true
+  }
+]
