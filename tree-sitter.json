@@ -9,6 +9,7 @@
       "file-types": [
         "use"
       ],
+      "first-line-regex": "#!USE.*$",
       "injection-regex": "^use$",
       "class-name": "TreeSitterUse",
       "highlights": "queries/highlights.scm"

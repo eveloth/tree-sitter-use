@@ -21,9 +21,11 @@ const REGEXP = {
 
 module.exports = grammar({
   name: "use",
+
   extras: ($) => [/\s/, $.comment],
+
   rules: {
-    source_file: ($) => repeat(seq($.use_def, "\n")),
+    source_file: ($) => repeat($.use_def),
 
     use_def: ($) =>
       seq(
@@ -31,6 +33,7 @@ module.exports = grammar({
         choice($.package_identifier, $.wildcard),
         /\s/,
         repeat1(choice($.set, $.unset)),
+        "\n",
       ),
 
     package_identifier: ($) =>
@@ -41,23 +44,21 @@ module.exports = grammar({
         optional($.repository),
       ),
 
+    package: (_) => token(seq(REGEXP.CATEGORY, "/", REGEXP.PACKAGE)),
+
     version: (_) => seq(/-/, REGEXP.VERSION),
 
     slot: (_) => seq(/:/, REGEXP.SLOT),
 
     repository: (_) => seq(/::/, REGEXP.REPOSITORY),
 
-    all_keywords: (_) => token("**"),
+    wildcard: (_) => token("*/*"),
 
     unset: (_) => token(seq(REGEXP.DISABLE, REGEXP.USE_FLAG)),
 
     set: (_) => token(REGEXP.USE_FLAG),
 
-    package: (_) => seq(REGEXP.CATEGORY, "/", REGEXP.PACKAGE),
-
-    category: (_) => token(REGEXP.CATEGORY),
-
-    wildcard: (_) => token("*/*"),
+    all_keywords: (_) => token("**"),
 
     cmp: (_) => token(choice(/~/, /=/, />/, /</, />=/, /<=/)),
 

@@ -5,17 +5,8 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "use_def"
-          },
-          {
-            "type": "STRING",
-            "value": "\n"
-          }
-        ]
+        "type": "SYMBOL",
+        "name": "use_def"
       }
     },
     "use_def": {
@@ -65,6 +56,10 @@
               }
             ]
           }
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
         }
       ]
     },
@@ -112,6 +107,26 @@
           ]
         }
       ]
+    },
+    "package": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[A-Za-z0-9_][A-Za-z0-9+_.-]*"
+          },
+          {
+            "type": "STRING",
+            "value": "/"
+          },
+          {
+            "type": "PATTERN",
+            "value": "(([A-z0-9_])([A-z0-9+_-]*)(([A-z][0-9]*)|([A-z])))|([A-z0-9]*)"
+          }
+        ]
+      }
     },
     "version": {
       "type": "SEQ",
@@ -180,30 +195,6 @@
       "content": {
         "type": "PATTERN",
         "value": "[A-Za-z0-9][A-Za-z0-9+_-]*"
-      }
-    },
-    "package": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "PATTERN",
-          "value": "[A-Za-z0-9_][A-Za-z0-9+_.-]*"
-        },
-        {
-          "type": "STRING",
-          "value": "/"
-        },
-        {
-          "type": "PATTERN",
-          "value": "(([A-z0-9_])([A-z0-9+_-]*)(([A-z][0-9]*)|([A-z])))|([A-z0-9]*)"
-        }
-      ]
-    },
-    "category": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": "[A-Za-z0-9_][A-Za-z0-9+_.-]*"
       }
     },
     "wildcard": {

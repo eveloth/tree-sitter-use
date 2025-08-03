@@ -1,10 +1,5 @@
 [
   {
-    "type": "package",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "package_identifier",
     "named": true,
     "fields": {},
@@ -98,10 +93,6 @@
     "named": false
   },
   {
-    "type": "/",
-    "named": false
-  },
-  {
     "type": "cmp",
     "named": true
   },
@@ -109,6 +100,10 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "package",
+    "named": true
   },
   {
     "type": "set",
