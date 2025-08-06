@@ -1,9 +1,9 @@
 ; highlights.scm
 
 (cmp) @comparison
-(set) @set
-(unset) @unset
-(package) @keyword
+(package) @package
 (version) @metadata
 (slot) @metadata
 (repository) @metadata
+(set) @set
+(unset) @unset
